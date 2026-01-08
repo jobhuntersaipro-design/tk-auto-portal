@@ -54,19 +54,19 @@ export default function MetricsCard({
 
     return (
         <div
-            className={`relative overflow-hidden rounded-2xl ${colors.bg} border ${colors.border} p-6 transition-colors duration-200`}
+            className={`relative overflow-hidden rounded-xl sm:rounded-2xl ${colors.bg} border ${colors.border} p-3 sm:p-6 transition-colors duration-200`}
         >
             <div className="relative">
                 {/* Header */}
-                <div className="flex items-start justify-between mb-4">
+                <div className="flex items-start justify-between mb-2 sm:mb-4">
                     <div
-                        className={`w-12 h-12 rounded-xl bg-gradient-to-br ${colors.icon} flex items-center justify-center shadow-lg ${colors.iconShadow}`}
+                        className={`w-8 sm:w-12 h-8 sm:h-12 rounded-lg sm:rounded-xl bg-gradient-to-br ${colors.icon} flex items-center justify-center shadow-lg ${colors.iconShadow}`}
                     >
-                        <Icon className="w-6 h-6 text-white" />
+                        <Icon className="w-4 sm:w-6 h-4 sm:h-6 text-white" />
                     </div>
                     {trend && trendValue && (
                         <div
-                            className={`flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium ${trend === 'up'
+                            className={`hidden sm:flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium ${trend === 'up'
                                     ? 'bg-emerald-100 dark:bg-emerald-500/20 text-emerald-700 dark:text-emerald-400'
                                     : trend === 'down'
                                         ? 'bg-red-100 dark:bg-red-500/20 text-red-700 dark:text-red-400'
@@ -81,12 +81,12 @@ export default function MetricsCard({
 
                 {/* Value */}
                 <div className="mb-1">
-                    <p className="text-3xl font-bold text-gray-900 dark:text-white tracking-tight">{value}</p>
+                    <p className="text-lg sm:text-3xl font-bold text-gray-900 dark:text-white tracking-tight truncate">{value}</p>
                 </div>
 
                 {/* Title & Subtitle */}
-                <p className="text-sm font-medium text-gray-600 dark:text-slate-400">{title}</p>
-                {subtitle && <p className={`text-xs mt-1 ${colors.text}`}>{subtitle}</p>}
+                <p className="text-xs sm:text-sm font-medium text-gray-600 dark:text-slate-400 truncate">{title}</p>
+                {subtitle && <p className={`text-xs mt-1 ${colors.text} hidden sm:block`}>{subtitle}</p>}
             </div>
         </div>
     );

@@ -23,7 +23,7 @@ export default function RootLayout({
       <body className={`${inter.className} antialiased min-h-screen bg-gray-50 text-gray-900 dark:bg-slate-950 dark:text-white transition-colors duration-200`}>
         <ThemeProvider>
           <Navigation />
-          <main className="ml-64 min-h-screen">
+          <main className="lg:ml-64 min-h-screen pt-16 lg:pt-0">
             {children}
           </main>
         </ThemeProvider>

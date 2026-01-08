@@ -58,15 +58,15 @@ export default function Dashboard() {
   }
 
   return (
-    <div className="p-8">
+    <div className="p-4 sm:p-6 lg:p-8">
       {/* Header */}
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">Dashboard</h1>
-        <p className="text-gray-600 dark:text-slate-400">Welcome back! Here's an overview of your dealership.</p>
+      <div className="mb-6 lg:mb-8">
+        <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-2">Dashboard</h1>
+        <p className="text-sm sm:text-base text-gray-600 dark:text-slate-400">Welcome back! Here's an overview of your dealership.</p>
       </div>
 
       {/* Metrics Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 mb-6 lg:mb-8">
         <MetricsCard
           title="Total Inventory Value"
           value={formatCurrency(totalInventoryValue)}
@@ -99,15 +99,15 @@ export default function Dashboard() {
       </div>
 
       {/* Main Content */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
         {/* Activity Log */}
-        <div className="lg:col-span-2">
+        <div className="lg:col-span-2 order-2 lg:order-1">
           <ActivityLog entries={mockActivityLog} maxEntries={8} />
         </div>
 
         {/* Quick Actions */}
-        <div className="space-y-6">
-          <div className="rounded-2xl bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 p-6 shadow-sm transition-colors duration-200">
+        <div className="space-y-4 sm:space-y-6 order-1 lg:order-2">
+          <div className="rounded-2xl bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 p-4 sm:p-6 shadow-sm transition-colors duration-200">
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Quick Actions</h3>
             <div className="space-y-3">
               <Link href="/add-car">
@@ -133,7 +133,7 @@ export default function Dashboard() {
 
           {/* Customs Alert */}
           {unitsInCustoms > 0 && (
-            <div className="rounded-2xl bg-amber-50 dark:bg-amber-500/10 border border-amber-200 dark:border-amber-500/30 p-6 transition-colors duration-200">
+            <div className="rounded-2xl bg-amber-50 dark:bg-amber-500/10 border border-amber-200 dark:border-amber-500/30 p-4 sm:p-6 transition-colors duration-200">
               <div className="flex items-center gap-3 mb-3">
                 <div className="w-10 h-10 rounded-xl bg-amber-100 dark:bg-amber-500/20 flex items-center justify-center">
                   <Ship className="w-5 h-5 text-amber-600 dark:text-amber-400" />

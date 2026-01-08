@@ -132,12 +132,12 @@ export default function AddCarPage() {
 
     if (showSuccess) {
         return (
-            <div className="flex items-center justify-center min-h-screen">
+            <div className="flex items-center justify-center min-h-screen p-4">
                 <div className="text-center">
-                    <div className="w-20 h-20 rounded-full bg-emerald-100 dark:bg-emerald-500/20 flex items-center justify-center mx-auto mb-6">
-                        <Check className="w-10 h-10 text-emerald-600 dark:text-emerald-400" />
+                    <div className="w-16 sm:w-20 h-16 sm:h-20 rounded-full bg-emerald-100 dark:bg-emerald-500/20 flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                        <Check className="w-8 sm:w-10 h-8 sm:h-10 text-emerald-600 dark:text-emerald-400" />
                     </div>
-                    <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Vehicle Added!</h2>
+                    <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-2">Vehicle Added!</h2>
                     <p className="text-gray-600 dark:text-slate-400">Redirecting to inventory...</p>
                 </div>
             </div>
@@ -145,22 +145,22 @@ export default function AddCarPage() {
     }
 
     return (
-        <div className="p-8 max-w-5xl mx-auto">
+        <div className="p-4 sm:p-6 lg:p-8 max-w-5xl mx-auto">
             {/* Recovery Banner */}
             {showRecovery && (
-                <div className="mb-6 p-4 rounded-xl bg-blue-50 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-500/30 flex items-center justify-between">
+                <div className="mb-4 sm:mb-6 p-3 sm:p-4 rounded-xl bg-blue-50 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-500/30 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                     <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-lg bg-blue-100 dark:bg-blue-500/20 flex items-center justify-center">
+                        <div className="w-10 h-10 rounded-lg bg-blue-100 dark:bg-blue-500/20 flex items-center justify-center flex-shrink-0">
                             <AlertCircle className="w-5 h-5 text-blue-600 dark:text-blue-400" />
                         </div>
                         <div>
-                            <p className="font-medium text-gray-900 dark:text-white">Unsaved form data found</p>
-                            <p className="text-sm text-gray-600 dark:text-slate-400">
-                                Would you like to recover your previous progress?
+                            <p className="font-medium text-gray-900 dark:text-white text-sm sm:text-base">Unsaved form data found</p>
+                            <p className="text-xs sm:text-sm text-gray-600 dark:text-slate-400">
+                                Recover your previous progress?
                             </p>
                         </div>
                     </div>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 ml-13 sm:ml-0">
                         <Button
                             variant="outline"
                             size="sm"
@@ -177,39 +177,39 @@ export default function AddCarPage() {
             )}
 
             {/* Header */}
-            <div className="flex items-center justify-between mb-8">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 lg:mb-8">
                 <div>
-                    <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">Add New Vehicle</h1>
-                    <p className="text-gray-600 dark:text-slate-400">
-                        Fill in the vehicle details • Data auto-saves as you type
+                    <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-1 sm:mb-2">Add New Vehicle</h1>
+                    <p className="text-sm sm:text-base text-gray-600 dark:text-slate-400">
+                        Data auto-saves as you type
                     </p>
                 </div>
                 <Button
                     variant="outline"
                     onClick={handleReset}
-                    className="border-gray-300 dark:border-slate-700 text-gray-700 dark:text-slate-300 hover:bg-gray-100 dark:hover:bg-slate-800"
+                    className="border-gray-300 dark:border-slate-700 text-gray-700 dark:text-slate-300 hover:bg-gray-100 dark:hover:bg-slate-800 w-full sm:w-auto"
                 >
                     <RotateCcw className="w-4 h-4 mr-2" />
                     Reset Form
                 </Button>
             </div>
 
-            <form onSubmit={handleSubmit} className="space-y-8">
+            <form onSubmit={handleSubmit} className="space-y-6 lg:space-y-8">
                 {/* Basic Info Card */}
-                <div className="rounded-2xl bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 p-6 shadow-sm transition-colors duration-200">
-                    <div className="flex items-center gap-3 mb-6">
+                <div className="rounded-2xl bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 p-4 sm:p-6 shadow-sm transition-colors duration-200">
+                    <div className="flex items-center gap-3 mb-4 sm:mb-6">
                         <div className="w-10 h-10 rounded-xl bg-purple-600 flex items-center justify-center">
                             <CarIcon className="w-5 h-5 text-white" />
                         </div>
                         <div>
-                            <h2 className="text-lg font-semibold text-gray-900 dark:text-white">Vehicle Information</h2>
-                            <p className="text-sm text-gray-600 dark:text-slate-400">Basic details about the vehicle</p>
+                            <h2 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white">Vehicle Information</h2>
+                            <p className="text-xs sm:text-sm text-gray-600 dark:text-slate-400">Basic details about the vehicle</p>
                         </div>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                         <div className="space-y-2">
-                            <Label htmlFor="make" className="text-gray-700 dark:text-slate-300 flex items-center gap-2">
+                            <Label htmlFor="make" className="text-gray-700 dark:text-slate-300 flex items-center gap-2 text-sm">
                                 <Building className="w-4 h-4 text-gray-500 dark:text-slate-400" />
                                 Make / Brand
                             </Label>
@@ -224,7 +224,7 @@ export default function AddCarPage() {
                         </div>
 
                         <div className="space-y-2">
-                            <Label htmlFor="model" className="text-gray-700 dark:text-slate-300 flex items-center gap-2">
+                            <Label htmlFor="model" className="text-gray-700 dark:text-slate-300 flex items-center gap-2 text-sm">
                                 <CarIcon className="w-4 h-4 text-gray-500 dark:text-slate-400" />
                                 Model
                             </Label>
@@ -239,7 +239,7 @@ export default function AddCarPage() {
                         </div>
 
                         <div className="space-y-2">
-                            <Label htmlFor="year" className="text-gray-700 dark:text-slate-300">Year</Label>
+                            <Label htmlFor="year" className="text-gray-700 dark:text-slate-300 text-sm">Year</Label>
                             <Input
                                 id="year"
                                 type="number"
@@ -256,7 +256,7 @@ export default function AddCarPage() {
                         </div>
 
                         <div className="space-y-2">
-                            <Label htmlFor="color" className="text-gray-700 dark:text-slate-300 flex items-center gap-2">
+                            <Label htmlFor="color" className="text-gray-700 dark:text-slate-300 flex items-center gap-2 text-sm">
                                 <Palette className="w-4 h-4 text-gray-500 dark:text-slate-400" />
                                 Color
                             </Label>
@@ -270,7 +270,7 @@ export default function AddCarPage() {
                         </div>
 
                         <div className="space-y-2">
-                            <Label htmlFor="mileage" className="text-gray-700 dark:text-slate-300 flex items-center gap-2">
+                            <Label htmlFor="mileage" className="text-gray-700 dark:text-slate-300 flex items-center gap-2 text-sm">
                                 <Gauge className="w-4 h-4 text-gray-500 dark:text-slate-400" />
                                 Mileage (km)
                             </Label>
@@ -288,7 +288,7 @@ export default function AddCarPage() {
                         </div>
 
                         <div className="space-y-2">
-                            <Label htmlFor="vin" className="text-gray-700 dark:text-slate-300 flex items-center gap-2">
+                            <Label htmlFor="vin" className="text-gray-700 dark:text-slate-300 flex items-center gap-2 text-sm">
                                 <Hash className="w-4 h-4 text-gray-500 dark:text-slate-400" />
                                 VIN Number
                             </Label>
@@ -297,7 +297,7 @@ export default function AddCarPage() {
                                 value={formData.vin}
                                 onChange={(e) => updateField('vin', e.target.value.toUpperCase())}
                                 placeholder="e.g., 1HGBH41JXMN109186"
-                                className="bg-gray-50 dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-gray-900 dark:text-white font-mono"
+                                className="bg-gray-50 dark:bg-slate-800 border-gray-300 dark:border-slate-700 text-gray-900 dark:text-white font-mono text-sm"
                                 maxLength={17}
                             />
                         </div>
@@ -328,14 +328,14 @@ export default function AddCarPage() {
                 </div>
 
                 {/* Financial Calculator */}
-                <div className="rounded-2xl bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 p-6 shadow-sm transition-colors duration-200">
-                    <div className="flex items-center gap-3 mb-6">
+                <div className="rounded-2xl bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 p-4 sm:p-6 shadow-sm transition-colors duration-200">
+                    <div className="flex items-center gap-3 mb-4 sm:mb-6">
                         <div className="w-10 h-10 rounded-xl bg-emerald-600 flex items-center justify-center">
                             <span className="text-lg font-bold text-white">$</span>
                         </div>
                         <div>
-                            <h2 className="text-lg font-semibold text-gray-900 dark:text-white">Financial Intelligence</h2>
-                            <p className="text-sm text-gray-600 dark:text-slate-400">Calculate costs and projected profit</p>
+                            <h2 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white">Financial Intelligence</h2>
+                            <p className="text-xs sm:text-sm text-gray-600 dark:text-slate-400">Calculate costs and projected profit</p>
                         </div>
                     </div>
 
@@ -353,19 +353,19 @@ export default function AddCarPage() {
                 </div>
 
                 {/* Submit */}
-                <div className="flex items-center justify-end gap-4 pt-4">
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-end gap-3 sm:gap-4 pt-4">
                     <Button
                         type="button"
                         variant="outline"
                         onClick={() => router.push('/inventory')}
-                        className="border-gray-300 dark:border-slate-700 text-gray-700 dark:text-slate-300 hover:bg-gray-100 dark:hover:bg-slate-800"
+                        className="border-gray-300 dark:border-slate-700 text-gray-700 dark:text-slate-300 hover:bg-gray-100 dark:hover:bg-slate-800 order-2 sm:order-1"
                     >
                         Cancel
                     </Button>
                     <Button
                         type="submit"
                         disabled={isSaving || !formData.make || !formData.model}
-                        className="bg-blue-600 hover:bg-blue-700 text-white min-w-[140px]"
+                        className="bg-blue-600 hover:bg-blue-700 text-white min-w-[140px] order-1 sm:order-2"
                     >
                         {isSaving ? (
                             <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
